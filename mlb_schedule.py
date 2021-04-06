@@ -1,3 +1,6 @@
+# THE PURPOSE OF THIS CODE IS TO EXTRACT DATA FROM THE FOLLOWING SITE:
+# https://www.cbssports.com/mlb/schedule/20210403/
+
 
 # CREATE A DATETIME INDEX LIST USING FIRST AND LAST DATE
 def CreateDateTimeIndex(date_1, date_2):
@@ -8,13 +11,6 @@ def CreateDateTimeIndex(date_1, date_2):
 
     # FORMAT WILL BE RETURNED AS YYYYMMDD
     return [d.strftime("%Y%m%d") for d in date_range]
-
-
-# MAKE REQUEST AND SOUP
-def make_requests(url):
-    page = requests.get(url)
-    soup = BeautifulSoup(page.content, 'html.parser')
-    return soup
 
 
 if __name__ == '__main__':
